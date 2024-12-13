@@ -10,43 +10,17 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
+const corsOptions = {
+  origin: [
+    "http://localhost:5173", // If your frontend is on localhost
+    "https://mini-project-mern.onrender.com", // If your frontend is hosted on Render
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
 
-app.use(
-  cors({
-    origin: "https://mini-project-mern.vercel.app/",
-    methods: ["POST", "GET", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
-
-app.use((req, res, next) => {
-  res.header(
-    "Access-Control-Allow-Origin",
-    "https://mini-project-mern.vercel.app/"
-  );
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  next();
-});
-
-app.options("*", (req, res) => {
-  res.header(
-    "Access-Control-Allow-Origin",
-    "https://mini-project-mern.vercel.app/"
-  );
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  res.sendStatus(200);
-});
-
-app.use(express.json());
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-
-app.get("/", (req, res) => {
-  res.send("Hello, World!");
-});
+app.use(cors(corsOptions));
+app.use(bodyParser.json());
 
 // Routes
 app.use("/api/vehicles", vehicleRoutes);
