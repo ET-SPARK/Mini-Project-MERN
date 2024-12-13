@@ -18,61 +18,50 @@ Project Setup
 This section explains how to set up both the backend and frontend of the Vehicle Management System.
 Backend Setup
 
-    Clone the repository:
+Clone the repository:
+First, clone the backend repository to your local machine:
 
-    First, clone the backend repository to your local machine:
-
-git clone <https://github.com/ET-SPARK/Mini-Project-MERN>
-cd Mini-Project-MERN
-cd backend
+    git clone <https://github.com/ET-SPARK/Mini-Project-MERN>
+    cd Mini-Project-MERN
+    cd backend
 
 Install dependencies:
 
 Make sure you have Node.js and npm installed. Then, install the project dependencies:
 
-npm install
+    npm install
 
 Set up environment variables:
 
 Create a .env file in the root directory and add the following environment variables:
 
-MONGO_URI=mongodb+srv://<username>:<password>@vehicle-mini-app.nchcn.mongodb.net/
+    MONGO_URI=mongodb+srv://<username>:<password>@vehicle-mini-app.nchcn.mongodb.net/
 "I will attache the connection string.""
 
-    DB_URI: MongoDB connection string for the database.
-    PORT: Port number to run the backend server (default is 5000).
+DB_URI: MongoDB connection string for the database.
+PORT: Port number to run the backend server (default is 5000).
 
 Run the backend server:
 
 Once the dependencies are installed, you can start the server using:
 
-    node server.js
-
-    The backend server will be running on http://localhost:5000.
+node server.js
+The backend server will be running on http://localhost:5000.
 
 Frontend Setup
 
-    Clone the repository:
+Clone the repository:
+Clone the frontend repository to your local machine:
 
-    Clone the frontend repository to your local machine:
-
-git clone <https://github.com/ET-SPARK/Mini-Project-MERN>
-cd Mini-Project-MERN
-cd backend
+    git clone <https://github.com/ET-SPARK/Mini-Project-MERN>
+    cd Mini-Project-MERN
+    cd vehicle-mini-app
 
 Install dependencies:
 
 Make sure you have Node.js and npm installed. Then, install the project dependencies:
 
-npm install
-
-Set up environment variables:
-
-Create a .env file in the root directory and add the following variable:
-
-REACT_APP_BACKEND_URL=<http://localhost:5000>
-
-This specifies the backend URL for API requests. By default, it's set to <http://localhost:5000>.
+    npm install
 
 Run the frontend:
 
