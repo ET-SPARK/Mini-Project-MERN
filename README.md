@@ -46,7 +46,7 @@ Run the backend server:
 Once the dependencies are installed, you can start the server using:
 
 node server.js
-The backend server will be running on <http://localhost:5000>.
+The backend server will be running on http://localhost:5000.
 
 Frontend Setup
 
