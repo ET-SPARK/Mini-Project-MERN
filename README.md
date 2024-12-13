@@ -106,7 +106,7 @@ API Endpoints
 
     Description: Retrieves a list of all vehicles in the database.
 
-/api/vehicles/delete/:id
+/api/vehicles/delete/:id (DELETE)
 
     Description: Delete a vehicles from the database.
 
