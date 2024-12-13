@@ -10,7 +10,7 @@ const AddVehicle = ({ onVehicleAdded }) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/vehicles/add",
+        "https://mini-project-mern.onrender.com/api/vehicles/add",
         { name }
       );
       toast.success("🚗 New vehicle added successfully!");

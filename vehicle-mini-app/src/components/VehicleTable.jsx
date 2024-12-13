@@ -13,7 +13,7 @@ const VehicleTable = () => {
   const fetchVehicles = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/vehicles/all"
+        "https://mini-project-mern.onrender.com/api/vehicles/all"
       );
       setVehicles(response.data);
     } catch (error) {
@@ -32,7 +32,7 @@ const VehicleTable = () => {
       console.log(`Updating vehicle with ID: ${id} to status: ${newStatus}`);
 
       const response = await axios.put(
-        `http://localhost:5000/api/vehicles/update/${id}`,
+        `https://mini-project-mern.onrender.com/api/vehicles/update/${id}`,
         { status: newStatus }
       );
 
@@ -83,7 +83,7 @@ const VehicleTable = () => {
             onClick: async () => {
               try {
                 const response = await axios.delete(
-                  `http://localhost:5000/api/vehicles/delete/${id}`
+                  `https://mini-project-mern.onrender.com/api/vehicles/delete/${id}`
                 );
                 setVehicles((prevVehicles) =>
                   prevVehicles.filter((vehicle) => vehicle._id !== id)
