@@ -9,18 +9,24 @@ const vehicleRoutes = require("./routes/vehicleRoutes");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
+// CORS configuration
 const corsOptions = {
-  origin: [
-    "http://localhost:5173", // If your frontend is on localhost
-    "https://mini-project-mern.onrender.com", // If your frontend is hosted on Render
-  ],
+  origin: "*", // Allow all origins
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
 };
 
-app.use(cors(corsOptions));
+// Middleware
+app.use(cors(corsOptions)); // Apply CORS middleware
 app.use(bodyParser.json());
+
+// Optional: Add custom CORS headers for all routes to ensure CORS is always handled
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*"); // Allow any origin (you can replace '*' with specific origins)
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  next();
+});
 
 // Routes
 app.use("/api/vehicles", vehicleRoutes);
