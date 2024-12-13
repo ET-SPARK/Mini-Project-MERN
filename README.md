@@ -38,7 +38,7 @@ Create a .env file in the root directory and add the following environment varia
     MONGO_URI=mongodb+srv://<username>:<password>@vehicle-mini-app.nchcn.mongodb.net/
 "I will attache the connection string.""
 
-DB_URI: MongoDB connection string for the database.
+MONGO_URI: MongoDB connection string for the database.
 PORT: Port number to run the backend server (default is 5000).
 
 Run the backend server:
