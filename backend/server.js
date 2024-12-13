@@ -41,8 +41,12 @@ app.options("*", (req, res) => {
 
 app.use(express.json());
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+app.get("/", (req, res) => {
+  res.send("Hello, World!");
+});
 
 // Routes
 app.use("/api/vehicles", vehicleRoutes);
